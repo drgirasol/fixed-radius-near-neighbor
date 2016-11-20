@@ -7,7 +7,7 @@ function FRNN(points, r)
 	
 
 	(function build() {
-		this.points.forEach(function(point) {
+		points.forEach(function(point) {
 			var key = FRNN.prototype._toKey(point);
 
 			if (!(key in buckets)) {
@@ -20,8 +20,8 @@ function FRNN(points, r)
 }
 
 FRNN.prototype._toKey = function(point) {
-	var i1 = Math.floor(point.x/r);
-	var i2 = Math.floor(point.y/r);
+	var i1 = Math.floor(point.x/this.r);
+	var i2 = Math.floor(point.y/this.r);
 
 	return i1 + "" + i2;
 }
